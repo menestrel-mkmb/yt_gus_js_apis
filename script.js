@@ -36,15 +36,15 @@ const buildResult = (result) => {
             if(elem.checked && Array.isArray(result[elem.name]) ){
                 const arrayRes = result[elem.name].join('\r\n');
                 const newElem = document.createElement('p');
-                newElem.innerHTML = `${elem.name} : ${result[elem.name]}`;
+                newElem.innerHTML = `<b>${newKeys[elem.name]}</b>:\r\n${arrayRes}`;
                 content.appendChild(newElem);
             } else if(elem.checked && typeof(result[elem.name]) !== 'object') {
                 const newElem = document.createElement('p');
-                newElem.innerHTML = `${elem.name} : ${result[elem.name]}`;
+                newElem.innerHTML = `<b>${newKeys[elem.name]}</b>: ${result[elem.name]}`;
                 content.appendChild(newElem);
             } else if(elem.checked && typeof(result[elem.name]) === 'object') {
                 const newElem = document.createElement('p');
-                newElem.innerHTML = `${elem.name} : ${result[elem.name].name}`;
+                newElem.innerHTML = `<b>${newKeys[elem.name]}</b>: ${result[elem.name].name}`;
                 content.appendChild(newElem);
             }
         });

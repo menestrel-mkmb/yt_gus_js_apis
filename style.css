@@ -6,10 +6,55 @@ main {
     margin: 0 10%;
 }
 
+article {
+    background: #aaa;
+
+    border: 2px black solid;
+    border-radius: 20px;
+}
+
 h1 {
     margin-bottom: 2rem;
+    text-transform: uppercase;
 }
 
 #characterId {
     width: 10%;
+}
+
+.content {
+    background: #ddd;
+    border-radius: 10px;
+    box-sizing: border-box;
+    overflow: scroll;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    
+    width: 860px;
+    height: 300px;
+    margin: 1rem;
+}
+
+.content pre {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0 1rem;
+
+    font-size: 20px;
+    text-align: start;
+
+    margin: 1rem;
+}
+
+.content pre:last-child {
+    width: 100%;
+}
+
+pre p {
+    margin: 5px;
 }
