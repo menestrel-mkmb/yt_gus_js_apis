@@ -1,5 +1,8 @@
 const characterId = document.getElementById("characterId");
+
 const searchBtn = document.getElementById("btnSearch");
+const clearBtn = document.getElementById("btnClear");
+
 const content = document.getElementById("content");
 const img = document.getElementById("img");
 
@@ -15,7 +18,7 @@ const fetchApi = (value) => {
 }
 
 const keys = ['name', 'status', 'species', 'gender',
-                'origin', 'image', 'episode'];
+                'origin', 'episode'];
 
 const newKeys = {
     name: 'Nome',
@@ -31,8 +34,6 @@ const buildResult = (result) => {
     keys.map( (key) => document.getElementById(key))
         .map((elem) => elem.checked
                 && (newObject[elem.name] = result[elem.name]));
-    console.log(keys);
-    console.log(newObject);
     return newObject;
 }
 
@@ -43,3 +44,7 @@ searchBtn.addEventListener("click", async (e) => {
 
     img.src = `${result.image}`;
 });
+
+clearBtn.addEventListener("click", (e) => {
+    location.reload();
+})
