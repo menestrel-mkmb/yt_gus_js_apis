@@ -29,7 +29,7 @@ const newKeys = {
     species: 'Espécie',
     gender: 'Gênero',
     origin: 'Planeta de origem',
-    episode: 'Episódios',
+    episode: 'Aparições em Episódios',
 };
 
 const buildResult = (result) => {
@@ -40,11 +40,11 @@ const buildResult = (result) => {
                 let arrayRes = result[elem.name].join(' ');
                 arrayRes = arrayRes.replaceAll('https://rickandmortyapi.com/api/episode/','');
                 const episodeTitle = document.createElement('p');
-                episodeTitle.innerText = `${newKeys[elem.name]}:`;
+                episodeTitle.innerText = `${newKeys[elem.name]}`;
                 episodeTitle.className = `${elem.name}`;
                 content.appendChild(episodeTitle);
                 const newElem = document.createElement('textarea');
-                newElem.rows = 5;
+                newElem.rows = 7;
                 newElem.disabled = true;
                 newElem.textContent = `${arrayRes}`;
                 content.appendChild(newElem);
