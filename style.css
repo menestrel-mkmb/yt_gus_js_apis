@@ -1,0 +1,15 @@
+main {
+    text-align: center;
+
+    width: 80%;
+
+    margin: 0 10%;
+}
+
+h1 {
+    margin-bottom: 2rem;
+}
+
+#characterId {
+    width: 10%;
+}

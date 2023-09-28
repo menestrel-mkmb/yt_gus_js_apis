@@ -7,12 +7,42 @@
     <title>API Rick n Morty Test</title>
 </head>
 <body>
-    <form action="" method="get">
-        <input type="number" name="" id="characterId">
-        <button id="btnSearch">Buscar</button>
-    </form>
-    <pre id="content"></pre>
-    <img src="" alt="" srcset="" id="img">
+    <main>
+        <article>
+            <h1>Rick & Morty</h1>
+            <form action="" method="get">
+                <h2>Buscar personagens</h2>
+                <input type="number" name="characterId" id="characterId" min="1" max="826" value="1">
+                <button id="btnSearch">Buscar</button>
+            </form>
+            <section class="filter__sect">
+                <h3>Filtros de seleção</h3>
+
+                <input type="checkbox" name="name" id="name" class="cbox__inp">
+                <label for="name">Nome</label>
+
+                <input type="checkbox" name="status" id="status" class="cbox__inp">
+                <label for="status">Status</label>
+
+                <input type="checkbox" name="species" id="species" class="cbox__inp">
+                <label for="species">Espécie</label>
+
+                <input type="checkbox" name="gender" id="gender" class="cbox__inp">
+                <label for="gender">Gênero</label>
+
+                <input type="checkbox" name="origin" id="origin" class="cbox__inp">
+                <label for="origin">Origem</label>
+
+                <input type="checkbox" name="image" id="image" class="cbox__inp">
+                <label for="image">Foto</label>
+
+                <input type="checkbox" name="episode" id="episode" class="cbox__inp">
+                <label for="episode">Episódios</label>
+            </section>
+            <pre id="content"></pre>
+            <img src="" alt="" srcset="" id="img">
+        </article>
+    </main>
 </body>
 <script src="./script.js"></script>
 </html>
