@@ -44,7 +44,7 @@ const buildResult = (result) => {
                 episodeTitle.className = `${elem.name}`;
                 content.appendChild(episodeTitle);
                 const newElem = document.createElement('textarea');
-                newElem.rows = 7;
+                newElem.rows = 5;
                 newElem.disabled = true;
                 newElem.textContent = `${arrayRes}`;
                 content.appendChild(newElem);
