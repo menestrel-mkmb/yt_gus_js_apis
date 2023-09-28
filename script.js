@@ -30,17 +30,31 @@ const newKeys = {
 };
 
 const buildResult = (result) => {
-    const newObject = {};
-    keys.map( (key) => document.getElementById(key))
-        .map((elem) => elem.checked
-                && (newObject[elem.name] = result[elem.name]));
-    return newObject;
+    content.innerHTML = "";
+    return keys.map( (key) => document.getElementById(key))
+        .map((elem) => {
+            if(elem.checked && Array.isArray(result[elem.name]) ){
+                const arrayRes = result[elem.name].join('\r\n');
+                const newElem = document.createElement('p');
+                newElem.innerHTML = `${elem.name} : ${result[elem.name]}`;
+                content.appendChild(newElem);
+            } else if(elem.checked && typeof(result[elem.name]) !== 'object') {
+                const newElem = document.createElement('p');
+                newElem.innerHTML = `${elem.name} : ${result[elem.name]}`;
+                content.appendChild(newElem);
+            } else if(elem.checked && typeof(result[elem.name]) === 'object') {
+                const newElem = document.createElement('p');
+                newElem.innerHTML = `${elem.name} : ${result[elem.name].name}`;
+                content.appendChild(newElem);
+            }
+        });
 }
 
 searchBtn.addEventListener("click", async (e) => {
     e.preventDefault();
     const result = await fetchApi(characterId.value);
-    content.textContent = `${JSON.stringify(buildResult(result), undefined, 2)}`;
+    buildResult(result);
+    if(content.innerHTML == "") return content.innerHTML = "<p>Nenhum filtro selecionado</p>"
 
     img.src = `${result.image}`;
 });
